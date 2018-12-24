@@ -12,6 +12,7 @@
                 - １台は Zabbix Server 用
                 - １台は Zabbix Agent 用（Nginx でも入れようかなと思っている）
                 - スペックは適当。Server がちょっと強め、Agent がど軽め、を意図
+                - [gcp_2016_advent-calendar_1.md](https://gist.github.com/MisaKondo/cb46b0ecd106e9c824a641b14954b8e1) を少し参考にした
 
 
 ## 実行時環境情報
@@ -19,6 +20,16 @@
 - VSCode 1.30.1
 - Terraform v0.11.11
     - provider.google v1.20.0 
+
+## Prerequirements 
+- see: [TerraformでGCP環境を構築してみる](https://techblog.gmo-ap.jp/2017/11/16/terraformでgcp環境を構築してみる/)
+
+    - GCP プロジェクト
+        - Terraform 用のサービスアカウント
+    - Terraform のインストール
+    - GCP Cloud SDK のインストール
+        - GCS に tfstate を置くためのバケット
+
 
 ## 利用方法
 - Set `variables.tf`
