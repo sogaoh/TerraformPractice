@@ -12,5 +12,5 @@ resource "google_compute_firewall" "fw-rule-front-seg" {
 
   source_ranges = ["0.0.0.0/0"]
 
-  target_tags = ["front-servers"]
+  target_tags = ["front-server"]
 }

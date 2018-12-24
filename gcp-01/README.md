@@ -13,6 +13,14 @@
                 - １台は Zabbix Agent 用（Nginx でも入れようかなと思っている）
                 - スペックは適当。Server がちょっと強め、Agent がど軽め、を意図
 
+
+## 実行時環境情報
+- macOS Mojave 10.14.1
+- VSCode 1.30.1
+- Terraform v0.11.11
+    - provider.google v1.20.0 
+
+
 ## 構築メモ
 - .gitignore しているが、 `variables.tf` に内部名を書いている
 - backend の初期化に苦戦し、結局以下のように「手打ち」
