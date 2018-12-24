@@ -20,6 +20,63 @@
 - Terraform v0.11.11
     - provider.google v1.20.0 
 
+## 利用方法
+- Set `variables.tf`
+    ```
+    variable "project" {
+      default = "[Set your project]"
+    }
+
+    variable "metadata-ssh_keys" {
+      type = "string"
+      default = <<EOF
+      [Set your ssh-key(s)]
+      EOF
+    }
+
+    variable "region" {
+      default = "asia-northeast1"
+    }
+
+    variable "region_zone" {
+      default = "asia-northeast1-a"
+    }
+
+    variable "bucket" {
+      default = "[Set your bucket]"       # 残念ながら、これは効いていない
+    }
+
+    variable "instance_type_srv-01" {
+      default = "n1-standard-2"
+    }
+
+    variable "instance_type_agt-01" {
+      default = "g1-small"
+    }
+    ```
+
+- Execute commands 
+    ```
+    cd ${your_appropriate_directory}
+    git clone https://github.com/sogaoh/TerraformPractice.git
+
+    cd TerraformPractice/gcp-01
+    vi provider.tf  # Edit credentials properly
+
+    terraform init \
+        -backend=true \
+        -backend-config="credentials=[/path/to/credential-json]" \
+        -backend-config="project=[project]" \
+        -backend-config="bucket=[bucket]" \
+        -backend-config="prefix=terraform/state"
+
+    terraform plan 
+
+    terraform apply
+
+    -> 2 instances will be created...probably.
+    ```
+
 
 ## 構築メモ
 - .gitignore しているが、 `variables.tf` に内部名を書いている
