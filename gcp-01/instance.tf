@@ -2,7 +2,7 @@ resource "google_compute_instance" "srv-01" {
   name         = "srv-01"
   machine_type = "${var.instance_type_srv-01}"
   zone         = "${var.region_zone}"
-  tags         = ["front-server"]
+  tags         = ["front-server","monitoring"]
   boot_disk {
     initialize_params {
       image = "centos-cloud/centos-7"
@@ -28,7 +28,7 @@ resource "google_compute_instance" "agt-01" {
   name         = "agt-01"
   machine_type = "${var.instance_type_agt-01}"
   zone         = "${var.region_zone}"
-  tags         = ["front-server"]
+  tags         = ["front-server","monitoring"]
   boot_disk {
     initialize_params {
       image = "centos-cloud/centos-7"
