@@ -16,24 +16,19 @@
 踏み台にはSSH接続できるのですが、インターネットに出れないという状況。。
 ```
 
-## 実行時環境情報
-- macOS Mojave 10.14.4
-- VSCode 1.33.0
-- Terraform v0.11.13
-    - provider.aws v2.5.0[^1] 
-
 
 ## Prerequirements 
-- see: [TerraformでAWSのインフラ構成構築を自動化する(入門)](https://khigashigashi.hatenablog.com/entry/2018/09/25/232313)
 
-    - AWS IAM ユーザー
-        - アクセスキーを作成
-        - [【AWS】IAMユーザの作成方法](https://qiita.com/mrmomoca/items/319bdb471aaf38f74c49) がとても参考になります[^2]
-    - Terraform のインストール
-    - AWS CLI のインストール
+- AWS IAM ユーザー
+    - アクセスキーを作成
+    - [【AWS】IAMユーザの作成方法](https://qiita.com/mrmomoca/items/319bdb471aaf38f74c49) がとても参考になります[^2]
+- Terraform のインストール
+- AWS CLI のインストール
 
 
 ## 利用方法
+- see: [TerraformでAWSのインフラ構成構築を自動化する(入門)](https://khigashigashi.hatenablog.com/entry/2018/09/25/232313)
+
 - Set `terraform.tfvars`
     ```
     myhome_gip = "[Set your home global ip]"
@@ -48,7 +43,7 @@
 - Execute commands 
     ```
     cd ${your_appropriate_directory}
-    git clone https://github.com/sogaoh/TerraformPractice.git
+    git clone -b add-aws-01 https://github.com/sogaoh/TerraformPractice.git
 
     cd TerraformPractice/aws-01
     (vi terraform.tfvars)
@@ -61,6 +56,13 @@
 
     -> 2 instances will be created...probably.
     ```
+
+
+## 実行時環境情報
+- macOS Mojave 10.14.4
+- VSCode 1.33.0
+- Terraform v0.11.13
+    - provider.aws v2.5.0[^1] 
 
 
 # 備考
