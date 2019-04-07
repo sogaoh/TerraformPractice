@@ -6,7 +6,7 @@
   - 要素は以下の通り
       - VPCネットワーク
           - １VPC、２サブネット
-      - GCE
+      - EC2
           - インスタンス２台
               - １台は 踏み台 用（public subnet）
               - １台は STNSサーバー 用（private subnet）
@@ -64,5 +64,6 @@
 
 
 # 備考
-[^1]: `terraform providers --version` でproviderのバージョン確認が可能（前提がありそう。terraform init 最低１回実行、かな）
-[^2]: 2FA の設定は、 Authy で行った。 Google Authenticator ではなぜか不明だが３回躓いたので。
+
+[^1]: `terraform providers --version` でproviderのバージョン確認が可能（前提がありそう。terraform init 最低１回実行、かな）  
+[^2]: 2FA の設定は、 Authy で行った。 Google Authenticator ではなぜか不明だが３回躓いたので。  
