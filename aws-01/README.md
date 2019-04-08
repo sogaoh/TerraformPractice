@@ -21,7 +21,7 @@
 
 ## Prerequirements 
 
-- AWS IAM ユーザー
+- AWS IAM ユーザー[^2]
     - アクセスキーを作成
 - Terraform のインストール
 - AWS CLI のインストール
