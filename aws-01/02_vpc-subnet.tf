@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "public" {
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "10.1.1.0/24"
-  availability_zone = "ap-northeast-1d"
+  availability_zone = "${var.aws_zone_d}"
 
   tags {
     Name = "public-subnet-myaws-01"
@@ -21,7 +21,7 @@ resource "aws_subnet" "public" {
 resource "aws_subnet" "private" {
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "10.1.2.0/24"
-  availability_zone = "ap-northeast-1d"
+  availability_zone = "${var.aws_zone_d}"
 
   tags {
     Name = "private-subnet-myaws-01"

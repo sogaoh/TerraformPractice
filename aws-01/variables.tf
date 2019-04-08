@@ -12,6 +12,11 @@ variable "public_key_path" {
 }
 
 
+variable "aws_zone_d" {
+  default = "ap-northeast-1d"
+}
+
+
 variable "instance_type_bastion" {
   default = "t2.micro"
 }

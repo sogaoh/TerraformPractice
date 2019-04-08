@@ -31,6 +31,13 @@ resource "aws_security_group" "front-sg" {
     cidr_blocks = ["10.1.0.0/16"]
   }
 
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
   tags{
     Name = "front-sg"
   }
@@ -67,6 +74,13 @@ resource "aws_security_group" "back-sg" {
     to_port = -1
     protocol = "icmp"
     cidr_blocks = ["10.1.0.0/16"]
+  }
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
   }
 
   tags{
