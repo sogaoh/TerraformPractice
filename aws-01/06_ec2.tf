@@ -10,7 +10,8 @@ resource "aws_instance" "bastion-01" {
   private_ip = "10.1.1.10"
   associate_public_ip_address = true
   vpc_security_group_ids = [
-    "${aws_security_group.front-sg.id}"
+    "${aws_vpc.main.default_security_group_id}",
+    "${aws_security_group.ssh-sg.id}"
   ]
   key_name = "${aws_key_pair.auth.id}"
 
@@ -26,6 +27,7 @@ resource "aws_instance" "stns-01" {
   associate_public_ip_address = false
   private_ip = "10.1.2.10"
   vpc_security_group_ids = [
+    "${aws_vpc.main.default_security_group_id}",
     "${aws_security_group.back-sg.id}"
   ]
   key_name = "${aws_key_pair.auth.id}"
