@@ -5,8 +5,8 @@ Gmail の Filter を設定する Terraform Codes.
 
 ## PreRequirements
 - Google OAuth authorized
-- terraform install
-- direnv install
+- terraform installed
+- direnv installed
 
 - .envrc configured
     - example
@@ -16,13 +16,23 @@ Gmail の Filter を設定する Terraform Codes.
       export IMPERSONATED_USER_EMAIL="xxx@xxx.xxx"  # mail address of me
       ```
 
-### setup provider
+- terraform.tfvars configured
+
+```terraform.tfvars
+
+credentials="{\"client_id\": \"XXXXXXXXXXX-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com\", \"client_secret\": \"xxxxxxxxx-xxxxxxxxxxxxx\", \"refresh_token\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\", \"type\": \"authorized_user\"}"
+user_email="xxx@xxx.xxx"
+
+```
+
+### setup terraform-provider-gmailfilter
 - Download binary from https://github.com/yamamoto-febc/terraform-provider-gmailfilter/releases
     - see https://github.com/yamamoto-febc/terraform-provider-gmailfilter/
 - Place binary(`terraform-provider-gmailfilter_vX.X.X`) to `~/.terraform.d/plugins/darwin_amd64/`
     - or `${WorkingDirectory}/.terraform/plugins/darwin_amd64/`
 - Allow executing binary (If macOS)
     - see [1](allowExecuting1.png), [2](allowExecuting2.png), [3](allowExecuting3.png)
+
 
 ## refs
 - https://github.com/yamamoto-febc/terraform-provider-gmailfilter/
