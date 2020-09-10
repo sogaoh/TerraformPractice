@@ -12,6 +12,6 @@
 - [WIP][GitHub](VCS/GitHub)
 
 
-## Comunity
+## Community
 
 - [WIP][Gmail Filter](Community/GmailFilter) 
