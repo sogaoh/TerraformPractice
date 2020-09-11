@@ -9,7 +9,7 @@ var.github_secret_repository で指定の Repository に以下３つの Actions 
 
 ## Note
 http://ryosms.livedoor.blog/archives/9476742.html の GitHub Actions を展開したかったのです  
-・・・（まだできてない）
+・・・（まだできてない -> v3.0.0でできるようになった :tada: ）
 
 
 ## refs

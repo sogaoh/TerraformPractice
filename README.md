@@ -9,7 +9,7 @@
 ## VCS
 
 - [Bitbucket](VCS/Bitbucket)
-- [WIP][GitHub](VCS/GitHub)
+- [GitHub](VCS/GitHub)
 
 
 ## Community
