@@ -14,4 +14,4 @@
 
 ## Community
 
-- [WIP][Gmail Filter](Community/GmailFilter) 
+- [Gmail Filter](Community/GmailFilter) 
