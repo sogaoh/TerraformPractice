@@ -4,23 +4,30 @@ Gmail の Filter を設定する Terraform Codes.
 
 
 ## PreRequirements
-- Google OAuth authorized
-- terraform installed
-- direnv installed
-
-- .envrc configured
+- (direnv installed)
+- (.envrc configured)
     - example
     
       ```.envrc
-      export GOOGLE_CREDENTIALS=/path/to/application_default_credentials.json
+      export GOOGLE_CREDENTIALS=/path/to/domain-wide-deligated_service-account_credentials.json
       export IMPERSONATED_USER_EMAIL="xxx@xxx.xxx"  # mail address of me
       ```
+
+- GCP : `Service Account` prepared
+    - refs https://cloud.google.com/iam/docs/creating-managing-service-accounts
+- G Suite :
+    - API access with domain-wide delegation
+        - refs https://support.google.com/a/answer/162106
+    - Authorize your client ID
+        - refs https://support.google.com/gsuitemigrate/answer/9222866
+
+- terraform installed
 
 - terraform.tfvars configured
 
 ```terraform.tfvars
 
-credentials="{\"client_id\": \"XXXXXXXXXXX-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com\", \"client_secret\": \"xxxxxxxxx-xxxxxxxxxxxxx\", \"refresh_token\": \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\", \"type\": \"authorized_user\"}"
+credentials="{\"type\": \"service_account\",\"project_id\": \"XXXXXX\",\"private_key_id\": \"XXXXXXXX\",\"private_key\": \"-----BEGIN PRIVATE KEY-----\\nxxxx.....xxx\\n-----END PRIVATE KEY-----\\n\", \"client_email\": \"xxxx@XXXXX.iam.gserviceaccount.com\",\"client_id\": \"xxxxxxxx\",\"auth_uri\": \"https://accounts.google.com/o/oauth2/auth\",\"token_uri\": \"https://oauth2.googleapis.com/token\",\"auth_provider_x509_cert_url\": \"https://www.googleapis.com/oauth2/v1/certs\",\"client_x509_cert_url\": \"https://www.googleapis.com/robot/v1/metadata/x509/xxxxxxxx.iam.gserviceaccount.com\"}"
 user_email="xxx@xxx.xxx"
 
 ```
