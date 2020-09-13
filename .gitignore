@@ -16,3 +16,6 @@
 
 # terraformer generated
 generated
+
+# direnv
+.envrc
