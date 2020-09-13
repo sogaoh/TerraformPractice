@@ -47,6 +47,7 @@ user_email="xxx@xxx.xxx"
 - https://www.terraform.io/docs/providers/type/community-index.html
 - [Gmailのフィルタを管理するためのTerraformプロバイダーを作った - febc技術メモ](https://febc-yamamoto.hatenablog.jp/entry/2020/04/26/182608)
 - [TerraformerでGmailフィルタプロバイダーのコードをリバース生成する - febc技術メモ](https://febc-yamamoto.hatenablog.jp/entry/2020/05/08/101942)
+- [最高すぎる！Gmail のフィルタ設定をデプロイできる CLI「gmailfilters」 - kakakakakku blog](https://kakakakakku.hatenablog.com/entry/2020/04/22/090002)
 - https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/list
 - https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/create
 - https://github.com/GoogleCloudPlatform/terraformer/issues/605
