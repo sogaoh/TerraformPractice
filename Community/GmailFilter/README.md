@@ -7,7 +7,7 @@ Gmail の Filter を設定する Terraform Codes.
 - (direnv installed)
 - (.envrc configured)
     - example
-    
+
       ```.envrc
       export GOOGLE_CREDENTIALS=/path/to/domain-wide-deligated_service-account_credentials.json
       export IMPERSONATED_USER_EMAIL="xxx@xxx.xxx"  # mail address of me
@@ -35,10 +35,14 @@ user_email="xxx@xxx.xxx"
 ### setup terraform-provider-gmailfilter
 - Download binary from https://github.com/yamamoto-febc/terraform-provider-gmailfilter/releases
     - see https://github.com/yamamoto-febc/terraform-provider-gmailfilter/
-- Place binary(`terraform-provider-gmailfilter_vX.X.X`) to `~/.terraform.d/plugins/darwin_amd64/`
-    - or `${WorkingDirectory}/.terraform/plugins/darwin_amd64/`
+- Place binary(`terraform-provider-gmailfilter_vX.X.X`) to `~/.terraform.d/plugins/registry.terraform.io/hashicorp/gmailfilter/X.X.X/darwin_amd64/`
+    - or `${WorkingDirectory}/.terraform/plugins/registry.terraform.io/hashicorp/gmailfilter/X.X.X/darwin_amd64/`
 - Allow executing binary (If macOS)
     - see [1](allowExecuting1.png), [2](allowExecuting2.png), [3](allowExecuting3.png)
+- `terraform init` with `-plugin-dir` option
+    - ex.
+        - `terraform init -plugin-dir=${HOME}/.terraform.d/plugins`
+        - `terraform init -plugin-dir=${PWD}/.terraform/plugins`
 
 
 ## refs
@@ -51,3 +55,4 @@ user_email="xxx@xxx.xxx"
 - https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/list
 - https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/create
 - https://github.com/GoogleCloudPlatform/terraformer/issues/605
+- [terraform 0.13でローカルproviderを利用する方法 - Sionの技術ブログ](https://sioncojp.hateblo.jp/entry/2020/10/13/195117)
